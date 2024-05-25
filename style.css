@@ -1,0 +1,133 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap'); */
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    background-image: url(./images/pexels-photo-1957478.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+nav {
+    display: flex;
+    background-color: black;
+    height: 70px;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    color: white;
+    font-family: "Poetsen One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+/* .container {} */
+
+ul {
+    display: flex;
+    column-gap: 20px;
+    list-style: none;
+}
+
+ul li {
+
+    padding: 15px 30px 15px 30px;
+    border-radius: 15px;
+}
+
+ul li:hover {
+    background-color: white;
+    color: black;
+}
+
+.active {
+    background-color: white;
+    padding: 15px 30px 15px 30px;
+    width: 150px;
+    height: 50px;
+    /* color: black; */
+    position: relative;
+    transition: 2s;
+    z-index: 1;
+}
+
+.active::before {
+    content: "";
+    width: 50%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    transition-duration: 2s;
+    z-index: -1;
+}
+
+.active:hover::before {
+    border-radius: 15px;
+    width: 100%;
+}
+
+
+#img {
+    display: none;
+    cursor: pointer;
+}
+
+#click {
+    visibility: hidden;
+}
+
+@media screen and (max-width:900px) {
+    body {
+        height: 100vh;
+        width: 100%;
+        background-color: white;
+    }
+
+    ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 30px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px;
+    }
+
+    #img {
+        display: flex;
+        color: white;
+        font-size: 30px;
+    }
+
+    #click:checked~ul {
+        left: 0px;
+        transition: all 0.5s ease;
+        /* transition-timing-function: ease; */
+    }
+
+    /* #click:checked~ul */
+}
